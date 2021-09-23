@@ -5,7 +5,7 @@ const Layout = ({ children }) => {
         <>
             <header className="App-header">
                 <nav>
-                    hello from Layout!
+                
                 </nav>
             </header>
             {children}
