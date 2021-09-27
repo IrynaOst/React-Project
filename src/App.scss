@@ -10,8 +10,8 @@ body {
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 70px;
+  background-color: #1a73a7;
+  min-height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -19,6 +19,13 @@ body {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+img {
+  max-width: 100%;
+  height: auto;
 }
+
+.logo {
+  width: 70px;
+  height: 70px;
+}
+

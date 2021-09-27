@@ -1,12 +1,16 @@
 import React from 'react';
-import './App.css';
-import Layout from './containers/Layout';
+import './App.scss';
+import Layout from './containers/Layout/Layout';
+import { BrowserRouter as Router } from 'react-router-dom'
+import Home from './pages/Home/Home';
 
 function App() {
   return (
-    <Layout>
-     
-    </Layout>
+    <Router>
+      <Layout>
+        <Home />
+      </Layout>
+    </Router>
   );
 }
 
