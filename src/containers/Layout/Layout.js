@@ -6,7 +6,10 @@ const Layout = ({ children }) => {
     return (
         <>
             <header className="App-header">
-                <img className="logo" src={logo} alt="logo"/>
+                <div className="d-flex a-i-center">
+                    <img className="logo" src={logo} alt="logo"/>
+                    <span>Musicdemy</span>
+                </div>                
                 <NavLinks />
             </header>
             {children}

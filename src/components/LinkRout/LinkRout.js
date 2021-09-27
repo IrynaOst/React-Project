@@ -4,7 +4,7 @@ import './LinkRout.scss';
 
 const LinkRout = (props) => {
     return (
-        <Link {...props} className="nav-links">
+        <Link {...props} className="link">
             {props.children}
         </Link>
     )
