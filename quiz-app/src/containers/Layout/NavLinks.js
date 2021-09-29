@@ -4,7 +4,6 @@ import { HOME, LOGIN, SIGNUP } from '../../navigations/CONSTANTS';
 import Login from '../../pages/Login/Login';
 import Signup from '../../pages/Signup/Signup';
 
-
 const NavLinks = () => {
     return (
         <nav className="d-flex a-i-center">
