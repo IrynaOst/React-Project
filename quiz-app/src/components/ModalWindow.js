@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
 import { Redirect } from 'react-router-dom';
-import { HOME } from '../navigations/CONSTANTS';
+import { HOME } from '../constants/navigations';
 
 const ModalWindow = (props) => {
     const { btnName, children } = props;

@@ -11,7 +11,6 @@ const Home = () => {
                     Let's start lerning English with favorite songs!
                 </p>
             </div>
-
         </div>
     )
 }

@@ -16,6 +16,10 @@ body {
   align-items: center;
   justify-content: space-around;
   font-size: calc(10px + 2vmin);
+
+}
+
+.App-header a {
   color: white;
 }
 
@@ -35,7 +39,7 @@ img {
   font-size: 2em;
   font-weight: 600;
   color: white;
-  padding: 12px 20px;
+  padding: 10px 16px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -43,11 +47,11 @@ img {
   margin: 4px 2px;
   transition-duration: 0.4s;
   cursor: pointer;
+  border: 1px solid #ff8800;
 }
 
 .btn:hover {
   background-color: white;
-  border: 2px solid #ff8800;
   color: #ff8800;
 }
 
@@ -63,3 +67,26 @@ img {
   justify-content: center;
 }
 
+.j-c-sbetween {
+  justify-content: space-between;
+}
+
+.m-05 {
+  margin: .5em;
+}
+
+.c-black {
+  color: black;
+}
+
+.c-white {
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ff8800;
+}

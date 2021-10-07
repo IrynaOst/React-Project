@@ -3,7 +3,9 @@ import './App.scss';
 import Layout from './containers/Layout/Layout';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
-import { HOME } from './navigations/CONSTANTS';
+import { HOME, LOGIN, SIGNUP } from './constants/navigations';
+import Login from './pages/Login/Login';
+import Signup from './pages/Signup/Signup';
 
 function App() {
   return (
