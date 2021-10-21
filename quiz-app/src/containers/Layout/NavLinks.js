@@ -9,7 +9,7 @@ const NavLinks = ({ user }) => {
         <nav className="d-flex a-i-center" >
             <LinkRout to={HOME}>Home</LinkRout>
             {
-                user ? (
+                user?.result ? (
                     <div className="d-flex a-i-center m-05">
                         <img className="logo" src={user.result.imageUrl} alt={user.result.name} />
                         <span>{user.result.name}</span>
