@@ -1,32 +1,28 @@
 import React from 'react';
-import LinkRout from '../../components/LinkRout/LinkRout';
-import { HOME, LOGIN, SIGNUP } from '../../constants/navigations';
+import { Link } from 'react-router-dom';
+import { HOME } from '../../constants/navigations';
 import Login from '../../pages/Login/Login';
 import Signup from '../../pages/Signup/Signup';
+import './NavLinks.scss';
 
-const NavLinks = ({ user }) => {
+const NavLinks = ({ user, logout }) => {
     return (
         <nav className="d-flex a-i-center" >
-            <LinkRout to={HOME}>Home</LinkRout>
+            <Link to={HOME} className="p-05">Home</Link>
             {
                 user?.result ? (
-                    <div className="d-flex a-i-center m-05">
+                    <div className="d-flex a-i-center profile-links">
                         <img className="logo" src={user.result.imageUrl} alt={user.result.name} />
-                        <span>{user.result.name}</span>
-                        <button className="btn">Log out</button>
+                        <span className="p-05">{user.result.name}</span>
+                        <button className="btn" onClick={logout}>Log out</button>
                     </div>
                 ) : (
-                    <div className="d-flex ">
-                        <LinkRout to={LOGIN}>
-                            <Login />
-                        </LinkRout>
-                        <LinkRout to={SIGNUP}>
-                            <Signup />
-                        </LinkRout>
+                    <div className="d-flex">
+                        <Login />
+                        <Signup />
                     </div>
                 )
             }
-
         </nav>
     )
 }

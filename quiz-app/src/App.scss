@@ -11,12 +11,12 @@ body {
 
 .App-header {
   background-color: #1488ac;
-  min-height: 70px;
+  height: 3em;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  font-size: calc(10px + 2vmin);
-
+  font-size: calc(8px + 2vmin);
+  color: #ffffff;
 }
 
 .App-header a {
@@ -74,6 +74,10 @@ img {
 
 .m-05 {
   margin: .5em;
+}
+
+.p-05 {
+  padding: .5em;
 }
 
 .c-black {

@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import ModalWindow from '../../components/ModalWindow';
 
 const Signup = () => {
+    const ref = useRef(null);
 
     return (
-        <ModalWindow btnName="Sign up">
+        <ModalWindow btnName="Sign up" ref={ref}>
             <h3>Sign Up and Start Learning!</h3>
             <form>
                 <div className="container">

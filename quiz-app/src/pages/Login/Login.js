@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 import ModalWindow from '../../components/ModalWindow';
 import { GoogleLogin } from 'react-google-login';
@@ -10,6 +10,7 @@ import { HOME } from '../../constants/navigations';
 const Login = () => {
     const dispatch = useDispatch();
     const history = useHistory();
+    const ref = useRef(null);
 
     const handleSubmit = () => {
 
@@ -22,6 +23,7 @@ const Login = () => {
         try {
             dispatch({ type: 'AUTH', payload: { result, token } });
             history.push(HOME);
+            ref.current.onCloseModal();
         } catch (e) {
             console.log(e);
         }
@@ -33,7 +35,7 @@ const Login = () => {
     }
 
     return (
-        <ModalWindow btnName="Log in">
+        <ModalWindow btnName="Log in" ref={ref}>
             <h3>Log in to Your Musicdemy Account</h3>
             <form onSubmit={handleSubmit}>
                 <div className="container">

@@ -1,24 +1,28 @@
-import React, { useState } from 'react';
+import React, { forwardRef, useState, useImperativeHandle } from 'react';
 import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
-import { Redirect } from 'react-router-dom';
-import { HOME } from '../constants/navigations';
 
-const ModalWindow = (props) => {
+const ModalWindow = forwardRef((props, ref) => {
     const { btnName, children } = props;
     const [open, setOpen] = useState(false);
 
     const onOpenModal = () => setOpen(true);
     const onCloseModal = () => setOpen(false);
 
+    useImperativeHandle(ref, () => {
+        return {
+            onCloseModal: onCloseModal
+        };
+    });
+
     return (
         <div>
             <button className="btn" onClick={onOpenModal}>{btnName}</button>
             <Modal open={open} onClose={onCloseModal} center>
-                {open ? children : <Redirect to={HOME} />}
+                {children}
             </Modal>
         </div>
     );
-};
+});
 
 export default ModalWindow;
