@@ -9,11 +9,7 @@ const ModalWindow = forwardRef((props, ref) => {
     const onOpenModal = () => setOpen(true);
     const onCloseModal = () => setOpen(false);
 
-    useImperativeHandle(ref, () => {
-        return {
-            onCloseModal: onCloseModal
-        };
-    });
+    useImperativeHandle(ref, () => ({onCloseModal}));
 
     return (
         <div>

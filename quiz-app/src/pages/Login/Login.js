@@ -6,18 +6,32 @@ import google from '../../assets/google-logo.png';
 import './login.scss';
 import { useDispatch } from 'react-redux';
 import { HOME } from '../../constants/navigations';
+import { login } from '../../redux/actions/auth';
+
+const initialState = {
+    email: '',
+    password: ''
+}
 
 const Login = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     const ref = useRef(null);
 
-    const handleSubmit = () => {
+    const [formData, setFormData] = useState(initialState);
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        dispatch(login(formData, history));
+        console.log(formData)
     };
 
+    const handleChange = (e) => {
+        setFormData({...formData, [e.target.name]: e.target.value });
+    }
+
     const googleSuccess = async (res) => {
-        const result = res?.profileObj;
+        const result = res?.profileObj; 
         const token = res?.tokenId;
 
         try {
@@ -40,10 +54,10 @@ const Login = () => {
             <form onSubmit={handleSubmit}>
                 <div className="container">
                     <label htmlFor="email"><b>Email</b></label>
-                    <input type="text" placeholder="Enter Email" name="email" required />
+                    <input type="text" placeholder="Enter Email" name="email" onChange={handleChange} required />
 
                     <label htmlFor="psw"><b>Password</b></label>
-                    <input type="password" placeholder="Enter Password" name="psw" required />
+                    <input type="password" placeholder="Enter Password" name="password" onChange={handleChange} required />
 
                     <button className="btn submitbtn" type="submit">Login</button>
                 </div>

@@ -8,7 +8,7 @@ import { LOGOUT } from '../../redux/constants';
 
 const Layout = ({ children }) => {
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
-    console.log(user);
+   
     const dispatch = useDispatch();
     const location = useLocation();
 
@@ -19,9 +19,12 @@ const Layout = ({ children }) => {
 
     useEffect(() => {
         const token = user?.token;
-
+        
         setUser(JSON.parse(localStorage.getItem('profile')));
+        console.log(user);
     }, [location]);
+
+    
 
     return (
         <>
