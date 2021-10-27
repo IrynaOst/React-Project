@@ -67,7 +67,7 @@ const Login = () => {
                     render={(renderProps) => (
                         <div className="google-container">
                             <button className="google-btn" onClick={renderProps.onClick} disabled={renderProps.disabled} >
-                                <img src={google} className="google-logo" alt="google-logo" /> Google Log in
+                                <img src={google} className="google-logo" alt="google-logo" /> Log in with Google
                             </button>
                         </div>
                     )}
